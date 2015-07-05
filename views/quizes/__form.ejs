@@ -8,5 +8,16 @@
     <input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta%>"/>
 </p>
 
+<p>
+    <label for="tema" class="rem">Tema:</label>
+    <select id="tema" name="quiz[tema]">
+        <% for (var i in temas) { %>
+            <option value="<%= temas[i].id%>" <%=(quiz.tema === temas[i].id)?'selected':''%>>
+                <%= temas[i].value%>
+            </option>
+        <% } %>
+    </select>
+</p>
+
 <a href="/quizes"><button type="button">Cancelar</button></a>
 <input type="submit" value="Salvar">
